@@ -71,6 +71,7 @@ async function listMajors(auth) {
     let sheetsListDataProm = [];
 
     rows.forEach((row, rowIndex) => {
+        if (rowIndex === 0) {return;}
         const [nmb, np, raion, oblast, surname, bornsurname, name, patronymic, born, died, note, relationship] = row;
         const fio = `${surname} ${bornsurname && bornsurname.length > 1 ? `(${bornsurname})` : ''} ${name} ${patronymic}`
         sheetsListDataProm.push({
