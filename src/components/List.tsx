@@ -12,6 +12,8 @@ const List: React.FC<any> = ({hits}: any) => {
                 hits.length ? <table className="table table-striped">
                         <thead className="desktop-version">
                         <tr>
+                            <th>род.</th>
+                            <th>ум.</th>
                             <th>ФИО</th>
                             <th>Кладбище</th>
                             <th>Заметки</th>
@@ -30,6 +32,14 @@ ${note};
 
                                 return (
                                     <tr key={index} className="born-item">
+                                        <td className="born-name-tr">
+                                            <i className="mobile-version">род.: </i>
+                                            <span>{born}</span>
+                                        </td>
+                                        <td className="born-name-tr">
+                                            <i className="mobile-version">ум.: </i>
+                                            <span>{died}</span>
+                                        </td>
                                         <td className="born-name-tr">
                                             <i className="mobile-version">ФИО: </i>
                                             <span dangerouslySetInnerHTML={{__html: `${fio}`}} />
@@ -72,7 +82,7 @@ ${note};
                                                 : null
                                         }</td>
                                         <td className="note-info">{
-                                            note ?
+                                            relationship ?
                                                 <OverlayTrigger
                                                     placement={'left'}
                                                     overlay={<Tooltip id={`tooltip-left`}>{relationship}</Tooltip>}
