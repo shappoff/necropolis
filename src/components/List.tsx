@@ -42,7 +42,7 @@ ${note};
                                         </td>
                                         <td className="born-name-tr">
                                             <i className="mobile-version">ФИО: </i>
-                                            <span dangerouslySetInnerHTML={{__html: `${fio}`}} />
+                                            <span dangerouslySetInnerHTML={{__html: _highlightResult?.fio?.value}} />
                                         </td>
                                         <td className="td-place-location">
 
